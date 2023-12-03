@@ -1,7 +1,7 @@
 # Data
-train_path: /kaggle/input/chest-xray-pneumonia/train
-test_path: /kaggle/input/chest-xray-pneumonia/test
-val_path: /kaggle/input/chest-xray-pneumonia/val
+train_path: /kaggle/input/chest-xray-pneumonia/chest_xray/train
+test_path: /kaggle/input/chest-xray-pneumonia/chest_xray/test
+val_path: /kaggle/input/chest-xray-pneumonia/chest_xray/val
 num_classes: 2
 batch_size: 128
 shuffle: True
