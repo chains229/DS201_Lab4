@@ -16,6 +16,6 @@ dropout: 0.3
 # Model
 model: resnet50 
 pretrained: True
-freeze: True
+freeze: False
 
 save_path: ./save
