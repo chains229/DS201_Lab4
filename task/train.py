@@ -93,7 +93,7 @@ class Training():
                 'optimizer_state_dict': self.optimizer.state_dict(),
                 'score': score}, os.path.join(self.save_path, 'last_model.pth'))
             
-            if epoch > 0 and score < best_score:
+            if epoch > 0 and score <= best_score:
               threshold += 1
             else:
               threshold = 0
