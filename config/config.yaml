@@ -14,7 +14,7 @@ patience: 5
 dropout: 0.3
 
 # Model
-model: resnet50 
+model: resnet18 
 pretrained: True
 freeze: False
 
