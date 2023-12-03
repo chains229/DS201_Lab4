@@ -34,7 +34,7 @@ class getDataloader():
     def __init__(self, config):
         self.config = config
 
-        test_dataset = MyDataset(self.config, 'test')
+        self.test_dataset = MyDataset(self.config, 'test')
 
         if config['val_path'] != 'None':
             val_path=config['val_path']
