@@ -54,7 +54,7 @@ class Training():
             self.model.train()
 
             for it,item in enumerate(self.train_loader):
-                images, labels = it.to(self.device), item.to(self.device)
+                images, labels = item[0].to(self.device), item[1].to(self.device)
                 self.optimizer.zero_grad()
                 pred, loss = self.model(images, labels)
 
@@ -64,7 +64,7 @@ class Training():
 
             with torch.no_grad():
                 for it,item in enumerate(self.val_loader):
-                    images, labels = it.to(self.device), item.to(self.device)
+                    images, labels = item[0].to(self.device), item[1].to(self.device)
                     logits = self.model(images)
                     preds = logits.argmax(-1)
                     cm, acc, f1, precision, recall = cal_score(labels.cpu().numpy(),preds.cpu().numpy())
