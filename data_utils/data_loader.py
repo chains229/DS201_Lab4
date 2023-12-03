@@ -7,9 +7,15 @@ import torchvision.transforms as transforms
 from torch.utils.data import random_split
 
 class MyDataset(Dataset):
-    def __init__(self, config):
+    def __init__(self, config, mode):
+        if mode == 'train':
+            data_path = config['train_path']
+        elif mode == 'val':
+            data_path = config['val_path']
+        else:
+            data_path = config['test_path']
         self.data = datasets.ImageFolder(
-            root = config['data_path'],
+            root = data_path,
             transform = transforms.Compose([
                 transforms.Resize((224, 224)),
                 transforms.ToTensor(),
@@ -27,15 +33,13 @@ class MyDataset(Dataset):
 class getDataloader():
     def __init__(self, config):
         self.config = config
-        self.train_path=config['train_path']
-        self.test_path=config['test_path']
 
-        test_dataset = MyDataset(self.test_path, self.config)
+        test_dataset = MyDataset(self.config, 'test')
 
         if config['val_path'] != 'None':
             val_path=config['val_path']
-            train_dataset = MyDataset(self.train_path, self.config)
-            val_dataset = MyDataset(val_path, self.config)
+            train_dataset = MyDataset(self.config, 'train')
+            val_dataset = MyDataset(self.config, 'val')
         else:
             train_val_dataset = MyDataset(self.train_path, self.config)
             dataset_size = len(train_val_dataset)
