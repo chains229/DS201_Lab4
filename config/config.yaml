@@ -14,7 +14,7 @@ patience: 5
 dropout: 0.3
 
 # Model
-model: vgg16 # vgg16, vgg19, resnet18 or resnet50
+model: vgg19 # vgg16, vgg19, resnet18 or resnet50
 pretrained: True
 freeze: False
 
