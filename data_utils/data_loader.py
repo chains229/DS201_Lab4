@@ -38,14 +38,14 @@ class getDataloader():
 
         if config['val_path'] != 'None':
             val_path=config['val_path']
-            train_dataset = MyDataset(self.config, 'train')
-            val_dataset = MyDataset(self.config, 'val')
+            self.train_dataset = MyDataset(self.config, 'train')
+            self.val_dataset = MyDataset(self.config, 'val')
         else:
             train_val_dataset = MyDataset(self.train_path, self.config)
             dataset_size = len(train_val_dataset)
             val_size = int(0.1 * dataset_size)
             train_size = dataset_size - val_size
-            train_dataset, val_dataset = random_split(train_val_dataset, [train_size, val_size])
+            self.train_dataset, self.val_dataset = random_split(train_val_dataset, [train_size, val_size])
 
     def get_train(self):
         return DataLoader(self.train_dataset, batch_size = self.config['batch_size'], shuffle = self.config['shuffle'])
