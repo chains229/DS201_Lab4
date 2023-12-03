@@ -41,7 +41,7 @@ class getDataloader():
             self.train_dataset = MyDataset(self.config, 'train')
             self.val_dataset = MyDataset(self.config, 'val')
         else:
-            train_val_dataset = MyDataset(self.train_path, self.config)
+            train_val_dataset = MyDataset(self.config, 'train')
             dataset_size = len(train_val_dataset)
             val_size = int(0.1 * dataset_size)
             train_size = dataset_size - val_size
