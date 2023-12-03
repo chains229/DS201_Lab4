@@ -8,7 +8,7 @@ shuffle: True
 
 # Parameters
 num_epochs: 100
-learning_rate: 0.001
+learning_rate: 0.01
 momentum: 0.5
 patience: 5
 dropout: 0.3
