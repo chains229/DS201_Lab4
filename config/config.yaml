@@ -1,0 +1,21 @@
+# Data
+train_path: /kaggle/input/chest-xray-pneumonia/train
+test_path: /kaggle/input/chest-xray-pneumonia/test
+val_path: /kaggle/input/chest-xray-pneumonia/val
+num_classes: 2
+batch_size: 128
+shuffle: True
+
+# Parameters
+num_epochs: 100
+learning_rate: 0.001
+momentum: 0.5
+patience: 5
+dropout: 0.3
+
+# Model
+model: resnet50 
+pretrained: True
+freeze: True
+
+save_path: ./save
