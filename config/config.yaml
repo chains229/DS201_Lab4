@@ -2,7 +2,7 @@
 train_path: /kaggle/working/Jewellery-Classification/dataset/training
 test_path: /kaggle/working/Jewellery-Classification/dataset/test
 val_path: None
-num_classes: 2
+num_classes: 5 # 2 Chest Xray dataset, 5 for Jewellery dataset
 batch_size: 128
 shuffle: True
 
