@@ -1,8 +1,8 @@
 # Data
-train_path: /kaggle/working/Jewellery-Classification/dataset/training
-test_path: /kaggle/working/Jewellery-Classification/dataset/test
-val_path: None
-num_classes: 5 # 2 Chest Xray dataset, 5 for Jewellery dataset
+train_path: /kaggle/input/vietnamese-foods/Images/Train
+test_path: /kaggle/input/vietnamese-foods/Images/Test
+val_path: /kaggle/input/vietnamese-foods/Images/Validate
+num_classes: 30 
 batch_size: 128
 shuffle: True
 
